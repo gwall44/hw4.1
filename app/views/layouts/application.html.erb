@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tacostagram Final</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="stylesheet" href="/stylesheets/application.css">
+  </head>
+
+  <body>
+    <div>
+      <%= flash["notice"] %>
+    </div>
+    </div>
+      <div class="col-3 text-end">
+        <% @user = User.find_by({ "id" => session["user_id"] }) %>
+        <% if @user == nil %>
+          <a href="/users/new" class="btn btn-default">Sign Up</a>
+          |
+          <a href="/login" class="btn btn-default">Login</a>
+        <% else %>
+          Logged in as: <%= @user["username"] %>
+          |
+          <a href="/logout" class="btn btn-default">Logout</a>
+        <% end %>
+      </div>
+   
+
+    <%= yield %>
+  </body>
+</html>
