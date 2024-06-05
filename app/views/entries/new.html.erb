@@ -1,7 +1,7 @@
 <h2>New Entry</h2>
 
 <% if @current_user != nil %>
-  <form action="/entry" method="post" enctype="multipart/form-data">
+  <form action="/entries" method="post" enctype="multipart/form-data">
     <div class="mb-3">
       <label for="description_input" class="form-label">Description</label>
       <input type="text" name="body" id="body_input" class="form-control">
@@ -18,7 +18,7 @@
     </div>
 
     <button class="btn btn-primary">Save</button>
-    <a href="/entry">Cancel</a>
+    <a href="/entries">Cancel</a>
   </form>
 <% else %>
   You must first <a href="/login">login</a> to post.
