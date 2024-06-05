@@ -21,7 +21,7 @@ class PlacesController < ApplicationController
       @place.save
     else
       flash["notice"] = "Please login first."
-      redirect_to login_path
+      redirect_to "/login"
     end
   end
 end
