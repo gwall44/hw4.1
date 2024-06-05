@@ -2,6 +2,7 @@
 
 <% if @current_user != nil %>
   <form action="/entries" method="post" enctype="multipart/form-data">
+   <input type="hidden" name="place_id" id="title" value="<%= params["place_id"] %>">
   <div class="mb-3">
       <label for="title" class="form-label">Title</label>
       <input type="text" name="title" id="title" class="form-control">
@@ -23,7 +24,7 @@
 
 
     <button class="btn btn-primary">Save</button>
-    <a href="/entries">Cancel</a>
+    <a href="/Places">Cancel</a>
   </form>
 <% else %>
   You must first <a href="/login">login</a> to post.
