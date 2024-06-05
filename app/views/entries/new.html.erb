@@ -1,9 +1,9 @@
 <h2>New Entry</h2>
 
-<% if @user != nil %>
-  <form action="/entry" method="entry" enctype="multipart/form-data">
+<% if @current_user != nil %>
+  <form action="/entry" method="post" enctype="multipart/form-data">
     <div class="mb-3">
-      <label for="body_input" class="form-label">Body</label>
+      <label for="description_input" class="form-label">Description</label>
       <input type="text" name="body" id="body_input" class="form-control">
     </div>
 
