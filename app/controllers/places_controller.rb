@@ -11,11 +11,14 @@ class PlacesController < ApplicationController
       end
 
   def new
+    @user = User.find_by({ "id" => session["user_id"] })
   end 
 
   def create
-    @user = User.find_by(id: session["user_id"])
+    @user = User.find_by({ "id" => session["user_id"]  })
+  
     if @user
+      @place = Place.find_by({ "id" => params["id"] })
       @place = Place.new
       @place["name"] = params["name"]
       @place.save
